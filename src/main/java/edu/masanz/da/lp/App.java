@@ -53,25 +53,22 @@ public class App {
         // TODO 13: implementa la ejecución de las opciones del menú utilizando un switch.
         // Llama a los métodos correspondientes para cada opción.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        switch (numOpc){
+            case 1:
+                listarEquiposLigas();
+                break;
+            case 2:
+                mostrarTablaResultadosLiga();
+                break;
+            case 3:
+                listarCampeonesLigas();
+                break;
+            case 4:
+                anotarMarcadoresLiga();
+                break;
+            case 0:
+                salir();
+        }
     }
 
     /**
@@ -80,10 +77,14 @@ public class App {
     private void listarEquiposLigas() {
         // TODO 14: muestra la lista de ligas, lee el número de liga y muestra la lista de equipos de la liga seleccionada.
 
+        int numeroLiga = Gui.leerNumero(gestorLigas.getListaLigas());
 
-
-
-
+        for (int i = 0; i < numeroLiga; i++) {
+            System.out.println(gestorLigas.getLiga(numeroLiga));
+            for (int j = 0; j < 4; j++) {
+                System.out.println(gestorLigas.getEquipo(numeroLiga, j));
+            }
+        }
     }
 
     /**
@@ -91,8 +92,7 @@ public class App {
      */
     private void listarCampeonesLigas() {
         // TODO 15: muestra el listado de campeones de todas las ligas.
-
-
+        System.out.println(gestorLigas.getListadoCampeonesLigas());
     }
 
     /**
@@ -100,8 +100,8 @@ public class App {
      */
     private void mostrarTablaResultadosLiga() {
         // TODO 16: muestra la lista de ligas, lee el número de liga y muestra la tabla de resultados de la liga seleccionada.
-
-
+        int n = gestorLigas.getLiga();
+        // preguntar como y a ue liga mostrar la tabla
 
     }
 
@@ -111,7 +111,7 @@ public class App {
      */
     private void mostrarTablaResultadosLiga(int numLiga) {
         // TODO 17: muestra la tabla de resultados de la liga indicada.
-
+        int n = gestorLigas.getLiga(numLiga);
 
 
     }
