@@ -1,5 +1,7 @@
 package edu.masanz.da.lp;
 
+import java.util.Scanner;
+
 /**
  * Clase principal para ejecutar la aplicación de gestión de ligas de paddle.
  * Utiliza la clase GestorLigas para gestionar las ligas y la clase Gui para la interacción con el usuario.
@@ -13,8 +15,8 @@ public class App {
      */
     public App() {
         // TODO 11: instancia el GestorLigas e inicializa las ligas utilizando la clase Init
-
-
+        gestorLigas = new GestorLigas();
+        Init.crearLigas(gestorLigas);
     }
 
     /**
@@ -22,7 +24,18 @@ public class App {
      */
     public void run() {
         // TODO 12: en un bucle muestra el menú, lee la opción y ejecuta la opción hasta que se elija salir.
-
+        while (true){
+            Gui.mostrarMenu();
+            Scanner scanner = new Scanner(System.in);
+            System.out.printf("Introduce una opcion: ");
+            String text = scanner.nextLine();
+            if (Gui.leerNumero(text) == 0){
+                break;
+            }
+            System.out.printf("Seguro s/n: ");
+            String text2 = scanner.nextLine();
+            Gui.confirmar(text,text2);
+        }
 
 
 

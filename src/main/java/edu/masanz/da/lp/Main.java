@@ -9,7 +9,6 @@ public class Main {
         // TODO 01: instancia la clase App y llama al método run.
         App app = new App();
         app.run();
-
     }
 
 }
