@@ -16,6 +16,8 @@ public class Marcador {
     public Marcador() {
         // TODO 61: inicializa ambos valores a 0.
         // Puedes utilizar this(...) para llamar al otro constructor.
+        this.v1 = 0;
+        this.v2 = 0;
 
     }
 
@@ -26,7 +28,8 @@ public class Marcador {
      */
     public Marcador(int v1, int v2) {
         // TODO 62: inicializa los atributos con los parámetros proporcionados.
-
+        this.v1 = v1;
+        this.v2 = v2;
 
     }
 
@@ -38,7 +41,7 @@ public class Marcador {
      */
     public int getV1() {
         // TODO 63: devuelve el valor del primer equipo.
-        return 0;
+        return v1;
     }
 
     /**
@@ -47,7 +50,7 @@ public class Marcador {
      */
     public void setV1(int v1) {
         // TODO 64: establece el valor del primer equipo.
-
+        this.v1 = v1;
     }
 
     /**
@@ -56,7 +59,7 @@ public class Marcador {
      */
     public int getV2() {
         // TODO 65: devuelve el valor del segundo equipo.
-        return 0;
+        return v2;
     }
 
     /**
@@ -65,7 +68,7 @@ public class Marcador {
      */
     public void setV2(int v2) {
         // TODO 66: establece el valor del segundo equipo.
-
+        this.v2 = v2;
     }
 
     // endregion
@@ -77,8 +80,8 @@ public class Marcador {
      */
     public void setV1V2(int v1, int v2) {
         // TODO 67: establece ambos valores del marcador.
-
-
+        this.v1 = v1;
+        this.v2 = v2;
     }
 
     /**
@@ -87,13 +90,13 @@ public class Marcador {
      */
     public int getGanador() {
         // TODO 68: devuelve el número del equipo ganador.
-
-
-
-
-
-
-        return 0;
+        if (v1 > v2){
+            return 1;
+        } else if (v2 > v1) {
+            return 2;
+        } else {
+            return 0;
+        }
     }
 
     /**
@@ -103,7 +106,7 @@ public class Marcador {
     @Override
     public String toString() {
         // TODO 69: devuelve una representación textual del marcador.
-        return "0-0";
+        return "\n"+v1+"-"+v2+"\n";
     }
 
 }

@@ -26,23 +26,11 @@ public class App {
         // TODO 12: en un bucle muestra el menú, lee la opción y ejecuta la opción hasta que se elija salir.
         while (true){
             Gui.mostrarMenu();
-            Scanner scanner = new Scanner(System.in);
+            String s = "";
             System.out.printf("Introduce una opcion: ");
-            String text = scanner.nextLine();
-            if (Gui.leerNumero(text) == 0){
-                break;
-            }
-            System.out.printf("Seguro s/n: ");
-            String text2 = scanner.nextLine();
-            Gui.confirmar(text,text2);
+            int n = Gui.leerNumero(s);
+            ejecutarOpcion(n);
         }
-
-
-
-
-
-
-
     }
 
     /**
@@ -68,6 +56,7 @@ public class App {
                 break;
             case 0:
                 salir();
+                System.exit(0);
         }
     }
 
@@ -100,8 +89,8 @@ public class App {
      */
     private void mostrarTablaResultadosLiga() {
         // TODO 16: muestra la lista de ligas, lee el número de liga y muestra la tabla de resultados de la liga seleccionada.
-        int n = gestorLigas.getLiga();
-        // preguntar como y a ue liga mostrar la tabla
+        //int n = gestorLigas.getLiga();
+        // preguntar como y a que liga mostrar la tabla
 
     }
 
@@ -111,8 +100,8 @@ public class App {
      */
     private void mostrarTablaResultadosLiga(int numLiga) {
         // TODO 17: muestra la tabla de resultados de la liga indicada.
-        int n = gestorLigas.getLiga(numLiga);
-
+        //int n = gestorLigas.getLiga(numLiga);
+        int x = 1;
 
     }
 
@@ -126,23 +115,33 @@ public class App {
         // Muestra la tabla de resultados antes y después de anotar los marcadores.
         // Permite repetir el proceso hasta que el usuario decida salir.
 
+        String s = "";
+        System.out.println(gestorLigas.getListaEquipos(Gui.leerNumero(gestorLigas.getListaLigas())));
 
+        System.out.printf("Introduce el numero del primer equipo: ");
+        int n1 = Gui.leerNumero(s);
+        System.out.printf("Introduce el numero del segundo equipo: ");
+        int n2 = Gui.leerNumero(s);
+        int n = Gui.leerNumero(gestorLigas.getListaLigas());
+        System.out.printf("Introduce numero de marcador: ");
+        int n3 = Gui.leerNumero(s);
+        System.out.printf("Introduce puntos equipo 1: ");
+        int n4 = Gui.leerNumero(s);
+        System.out.printf("Introduce puntos equipo 2: ");
+        int n5 = Gui.leerNumero(s);
+        gestorLigas.setMarcadorPartido(n,n1,n2,n3,n4,n5);
 
+        System.out.println(gestorLigas.getTablaResultadosLiga(Gui.leerNumero(gestorLigas.getListaLigas())));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.printf("Desea repetir el proceso? 1 = si, 2 = no: ");
+        int a = Gui.leerNumero(s);
+        if (a == 1){
+            anotarMarcadoresLiga();
+        } else if (a == 2) {
+            run();
+        } else {
+            System.out.println("Numero no valido, volviendo al menu...");
+        }
     }
 
     /**
