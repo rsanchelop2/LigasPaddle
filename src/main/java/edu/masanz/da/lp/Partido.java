@@ -84,9 +84,16 @@ public class Partido {
         // TODO 55: Devuelve el número del equipo ganador en base a los marcadores
         // Utiliza getMarcador y getGanador de la clase Marcador
 
-        getMarcador(marcador1,marcador2);
+
+
+
+        getMarcador(1);
+        getMarcador(2);
+        getMarcador(3);
 
         marcador1.getGanador();
+        marcador2.getGanador();
+        marcador3.getGanador();
 
 
 
