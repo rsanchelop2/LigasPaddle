@@ -123,6 +123,19 @@ public class Partido {
     public void setMarcadorPartido(int numMarcador, int v1, int v2) {
         // TODO 56: Fija los valores del marcador indicado
 
+        switch (numMarcador){
+            case 1:
+                marcador1.setV1(v1);
+                marcador1.setV2(v2);
+                break;
+            case 2:
+                marcador2.setV1(v1);
+                marcador2.setV2(v2);
+                break;
+            case 3:
+                marcador3.setV1(v1);
+                marcador3.setV2(v2);
+        }
     }
 
     /**
@@ -134,12 +147,25 @@ public class Partido {
     public String getTextoMarcador(int numMarcador) {
         // TODO 57: Devuelve la representación textual del marcador
         // Si el resultado era 0-0 sebe devolver una cadena vacía de tres espacios: "   "
+        String s = "";
 
+        if (marcador1.getV1() != 0 && marcador1.getV2()!=0){
+            s +=  marcador1.getV1() + "-" + marcador1.getV2();
+        } else {
+            s += "   ";
+        }
+        if (marcador2.getV1() != 0 && marcador2.getV2()!=0){
+            s +=  marcador2.getV1() + "-" + marcador2.getV2();
+        } else {
+            s += "   ";
+        }
+        if (marcador3.getV1() != 0 && marcador3.getV2()!=0){
+            s +=  marcador3.getV1() + "-" + marcador3.getV2();
+        } else {
+            s += "   ";
+        }
 
-
-
-
-        return "   ";
+        return s;
     }
 
 }
